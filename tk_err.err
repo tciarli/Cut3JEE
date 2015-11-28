@@ -1,0 +1,44 @@
+
+Command:
+Command:reak==""} {exec $Terminal -e gdb lsd_gnu &} {exec $Terminal -e gdb $cmdbreak lsd_gnu &}
+Produced message:
+couldn't execute "terminal": no such file or directory
+-----
+
+Command:
+Command:reak==""} {exec $Terminal -e gdb lsd_gnu &} {exec $Terminal -e gdb $cmdbreak lsd_gnu &}
+Produced message:
+couldn't execute "terminal": no such file or directory
+-----
+
+Command:
+Command:reak==""} {exec $Terminal -e gdb lsd_gnu &} {exec $Terminal -e gdb $cmdbreak lsd_gnu &}
+Produced message:
+couldn't execute "terminal": no such file or directory
+-----
+
+set choice $stack_info
+
+can't set "choice": variable must have integer value
+
+Command:
+Command:reak==""} {exec $Terminal -e gdb lsd_gnu &} {exec $Terminal -e gdb $cmdbreak lsd_gnu &}
+Produced message:
+couldn't execute "terminal": no such file or directory
+-----
+
+Command:
+Command:reak==""} {exec $Terminal -e gdb lsd_gnu &} {exec $Terminal -e gdb $cmdbreak lsd_gnu &}
+Produced message:
+couldn't execute "terminal": no such file or directory
+-----
+
+Command:set dir [glob *.cpp]
+Produced message:
+no files matched glob pattern "*.cpp"
+-----
+
+Command:set dir [glob *.cpp]
+Produced message:
+no files matched glob pattern "*.cpp"
+-----

@@ -1,0 +1,61 @@
+The model heavily draws on the previous DIME Models (see the latest version in DIME3Distribution) on Micro foundation of explanations of economic growth and icome distribution, with particular attention to structural change dynamics. 
+
+Descriptions of the model are found in the LEM working papers and in the MPI Working papers. The latter has been submitted to Metroeconomica (Cut 1). The results on the structural parameters are to be found in a separate paper (Cut 2)
+Ciarli, T.; Lorentz, A.; Savona, M. & Valente, M. Structural Change of Production and Consumption: A Micro to Macro Approach to Growth and Income Distribution
+Ciarli, T.; Lorentz, A.; Savona, M. & Valente, M. The Effect of Consumption and Production Structure on Growth and Distribution. A Micro to Macro Model
+
+
+In addition to the previous version of the model, this version expands on the relaton between stylised consumption features and product innovation. Firms produce a good that satifsfies one single need. Needs are fixed and given since the beginning (new needs cannot be created in the system). Fims may change the need (sector) they currently produce, and shift to a market with higher demand. Therefore now firms also undergo product R&D, which allows them to explore the neighbouring needs, and eventually come up with a new prouct when their sales stagnate.
+
+What is new with respect to the previous version of the model:
+- Multiple needs: more needs now can be produced and each need is characterised by a quality index and the price
+- R&D expenditures: some of the profits (not used to invest in capital) of the final good firms is allocated to R&D, and not only to shares
+- The result of R&D is a 'prototype' of a new good, targeting a different need, with a given quality level (and therefore mark-up, inversely related with price)
+- Entry and exit:
+- Consumer needs: consumers have differnt (fixed) needs among which they distributed their expenditures. Classes may have the same distribution, or it may change as new classes emerge
+
+The main aim is to anlayse the effect of expenditure distrbution on firms dynamics, and viceversa.
+- Equal distrbution across classes: we anlayse the effect of changing the distribution within classes
+- DIfferent distribution across classes: we introduce satiation, and analyse how the shift of the distribution of expenditure across needs, as classes become richer, affect the the growth and distribution of income
+
+
+
+
+
+************************************************************************************************************************************************************
+
+
+MODEL CLEAN UP
+Variables and parameters that are cancelled from the code because not used also in the previous version
+
+Var
+Profitincome
+MovAvUnemp1
+MovAvUnemp
+MovAvInflation
+markup (is a parameter)
+Sell
+ProdCost
+
+
+Par
+SharePofitIncome
+ShareProfitDistributed (was only in the LSD)
+Unemp
+TotUnemp
+aUnemp
+ainflation
+alpha
+minMu
+maxMu
+Concentration
+PriceWeight
+valNeed
+ShareSavings
+
+
+
+
+
+
+
