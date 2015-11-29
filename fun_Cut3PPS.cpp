@@ -431,7 +431,7 @@ else
     WRITES(cur1,"IdLabor",v[18]+1);
     v[20]=v[6]/v[17];
     WRITELS(cur1,"NumWorkers",v[20], t);
-    WRITELS(cur1,"NumWorkers",0, t-1); // write also that the number of workers in the previous period is equal to 0, as it is used in the inequality statistics
+    WRITELLS(cur1,"NumWorkers",0, t,1); // write also that the number of workers in the previous period is equal to 0, as it is used in the inequality statistics
     v[22]=0;
     CYCLES(p->up->up->up,cur2, "Class")
      {
@@ -2125,7 +2125,7 @@ EQUATION("KNbrWorkers")
 Number of workesr in the capital sector firms
 */
 v[1]=0;
-CYCLE(cur, "Order")
+CYCLES(p->up, cur, "Order")
  {
   v[11]=VS(cur,"KAmount");
   v[12]=VS(cur,"KCompletion"); 
@@ -2160,7 +2160,7 @@ else
     WRITES(cur1,"IdKLabor",v[18]+1);
     v[20]=v[6]/v[17];
     WRITELS(cur1,"KNbrWorkers",v[20], t);
-    WRITELS(cur1,"KNbrWorkers",0, t-1); // write also that the number of workers in the previous period is 0, to be used in the statistics
+    WRITELLS(cur1,"KNbrWorkers",0, t,1); // write also that the number of workers in the previous period is 0, to be used in the statistics
     v[22]=0;
     CYCLES(p->up->up->up,cur2, "Class")
      {
@@ -2808,8 +2808,8 @@ CYCLE(cur4, "Supply")
         v[12]=VS(cur,"SkillIntensity"); 
         v[7]=v[2]/v[12]; // suppressed for the moment the use of skill bias, which should become a continuous variable, rather than a dummy
         v[3]=v[4]*(v[9]/v[2]); // number of workers in the first layer in the first period	
-        WRITELS(cur,"NumWorkers",v[3], t-1);
-        WRITES(cur,"NumWorkers",v[3]);
+        WRITELLS(cur,"NumWorkers",v[3],t,1);
+        WRITELS(cur,"NumWorkers",v[3],t);
         v[21]=VS(cur,"wagecoeff");
         v[23]=v[22]*v[21];
         WRITELS(cur,"wage",v[23], t-1);
@@ -2822,8 +2822,8 @@ CYCLE(cur4, "Supply")
         v[19]=VS(cur2,"NumWorkers"); //and the number of workers in the previous tier
         v[6]=v[19]/v[17]; // compute the required executives
         v[24]=VS(cur,"nu"); // given the worker ration between tiers of the present tier (use different worker ratios in case we want to change it along the hierarchical structure)
-        WRITELS(cur,"NumWorkers",v[6], t-1);
-        WRITES(cur,"NumWorkers",v[6]);
+        WRITELLS(cur,"NumWorkers",v[6], t,1);
+        WRITELS(cur,"NumWorkers",v[6],t);
         v[25]=VLS(cur2,"wage",1);
         v[26]=VS(cur,"wagecoeff");
         v[27]=v[25]*v[26];
@@ -2833,8 +2833,8 @@ CYCLE(cur4, "Supply")
           cur3=ADDOBJS_EX(cur->up,"Labor",cur);
           WRITES(cur3,"IdLabor",v[18]+1);
           v[20]=v[6]/v[24];
-          WRITELS(cur3,"NumWorkers",v[20], t-1);
-          WRITES(cur3,"NumWorkers",v[20]);
+          WRITELLS(cur3,"NumWorkers",v[20], t,1);
+          WRITELS(cur3,"NumWorkers",v[20],t);
           v[28]=v[27]*v[26];
           WRITELS(cur3,"wage",v[28], t-1);
          }
@@ -2910,7 +2910,7 @@ CYCLE(cur, "KFirm")
   v[8]+=v[7];
  }
 cur=SEARCH("Country");
-WRITES(cur,"MovAvNbrWork",v[3]);
+WRITELS(cur,"MovAvNbrWork",v[3],t);
 v[10]=V("AvPrice");
 WRITELS(cur,"AvPrice",v[10], t-1);
 WRITELS(cur,"MovAvPrice",v[10], t-1);
